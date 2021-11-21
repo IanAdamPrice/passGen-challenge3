@@ -12,6 +12,13 @@ var generatePassword = function() {
   }  else if (length > 128) {
     window.alert("Your password must no more than 128 characters");
   }
+  spchars=confirm("Do you want to include special characters?");
+  upChars=confirm("Do you want to include uppercase characters?");
+  lowChars=confirm("Do you want to include lowercase letters?");
+  numChars=confirm("Do you want to include numbers?");
+  
+  password="password";
+  return password;
 }; //function
 
 // Get references to the #generate element
