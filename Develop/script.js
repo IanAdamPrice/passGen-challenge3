@@ -8,10 +8,13 @@ var numberCharacters = "0123456789";
 var generatePassword = function() {
   var length = prompt("How many characters would you like in your password?");
   if (length < 8) {
-    window.alert("Your password must be at least 8 characters long")
+    window.alert("Your password must be at least 8 characters long");
+    return;
   }  else if (length > 128) {
     window.alert("Your password must no more than 128 characters");
+    return;
   }
+
   spchars=confirm("Do you want to include special characters?");
   upChars=confirm("Do you want to include uppercase characters?");
   lowChars=confirm("Do you want to include lowercase letters?");
