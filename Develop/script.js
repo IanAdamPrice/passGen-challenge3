@@ -17,8 +17,47 @@ var generatePassword = function() {
   lowChars=confirm("Do you want to include lowercase letters?");
   numChars=confirm("Do you want to include numbers?");
   
-  password="password";
-  return password;
+  temppassword="";
+  
+  for (var i = 0; i < length; i++) {
+  
+    var templetter = "";
+    while (templetter==""){
+      var modd=(Math.floor(Math.random() * 4));
+      //console.log("modd="+modd)
+      
+      templetter = templetter;
+      if (modd == 0){
+        //lc
+        if (upChars == true){
+          templetter = uppercaseLetters.charAt(Math.floor(Math.random() * 26));
+        }
+      }
+      else if (modd == 1){
+        //uc
+        if (lowChars == true){
+          templetter = lowercaseLetters.charAt(Math.floor(Math.random() * 26));
+
+        }
+      }
+      else if(modd == 2){
+        //SC
+        if (spchars == true){
+          templetter = specialCharacters.charAt(Math.floor(Math.random() * 22));
+        }
+      }
+      else {
+        //Digits
+        if (numChars == true){
+          templetter = numberCharacters.charAt(Math.floor(Math.random() * 10));
+        }
+      }
+    } //while
+
+    var temppassword = temppassword + templetter; 
+
+   } // for
+   return temppassword;
 }; //function
 
 // Get references to the #generate element
